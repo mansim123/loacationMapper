@@ -1,20 +1,14 @@
-# minimal-react-webpack-babel-setup
+# LocationMapper
+This project was created using React with webpack and Babel
 
-[![Build Status](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup.svg?branch=master)](https://travis-ci.org/rwieruch/minimal-react-webpack-babel-setup) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/minimal-react-webpack-babel-setup.svg)](https://greenkeeper.io/)
+## Skills showcased
 
-Read more about it: [The Minimal React Webpack Babel Setup](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
+- ReactJs
+- Scss
+- Google Maps API
+- Axios Json call
+- Props
 
-## Features
+## Server used to host:
 
-* React 16
-* Webpack 4
-* Babel 7
-* Hot Module Replacement
-
-## Installation
-
-* `git clone git@github.com:rwieruch/minimal-react-webpack-babel-setup.git`
-* cd minimal-react-webpack-babel-setup
-* npm install
-* npm start
-* visit `http://localhost:8080/`
+- https://www.manuelyemoh.co.uk/client_files/mapTest/

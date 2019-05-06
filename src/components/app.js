@@ -20,9 +20,14 @@ export class App extends Component {
              )
              .then(response => {
                this.setState({ returnData: response.data });
-               this.setState({
-                  loading:false
-               })
+
+              let MyLoading = this;
+
+              setTimeout(function() {
+                MyLoading.setState({
+                  loading: false
+                });
+              }, 1000);
              })
              .catch(function(error) {
                // handle error

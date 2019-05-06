@@ -1,28 +1,56 @@
 import React, { Component } from 'react'
 import '../css/app.scss'
+import axios from "axios";
+import Maps from './map'
 
 export class App extends Component {
+         constructor(props) {
+           super();
+           this.state = {
+             loading: true,
+             loadingTime: 2000,
+             returnData: []
+           };
+         }
 
-  constructor (props) {
-    super();
-    this.state = {
-      loading: true,
-      loadingTime: 2000,
-    };
-  }
+         componentDidMount() {
+           axios
+             .get(
+               `https://s3-eu-west-1.amazonaws.com/omnifi/techtests/locations.json`
+             )
+             .then(response => {
+               this.setState({ returnData: response.data });
+               this.setState({
+                  loading:false
+               })
+             })
+             .catch(function(error) {
+               // handle error
+               console.log(error);
+             })
+             .then(function() {
+               // always executed
+             });
+         }
 
- componentDidMount (){
-   //call one
-   //call two
- }
+         render() {
+           const { loading } = this.state;
 
-render() {
-    return (
-      <div>
-        <h1>Loading Screen</h1>
-      </div>
-    )
-  }
-}
+           if (loading) {
+             // if your component doesn't have to wait for an async action, remove this block
+             return (
+               <div className="loadingGif">
+                 <div className="loadingimage" />
+               </div>
+             ); // render null when app is not ready
+           }
+
+           return (
+             <div>
+               <Maps locations={this.state.returnData} />
+             </div>
+           );
+         }
+       }
 
 export default App;
